@@ -24,7 +24,7 @@ export default class ClassesController{
         }
 
         const timeInMinutes = convertHourToMinutes(time);
-        //console.log('Filtering: ' + subject + week_day + timeInMinutes)
+        console.log(`Filtering: ${subject}/${week_day}/${timeInMinutes}`)
         const classes = await db('classes')
             .whereExists(function(){
                 this.select('class_schedule.*')
